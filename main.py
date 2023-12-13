@@ -19,6 +19,7 @@
 #   - Criada área de importação de bibliotecas
 #   - Criada área de variáveis iniciais
 #   - Criado menu inicial do jogo
+#   - Criada a opção de sair do jogo
 #
 # Licença: MIT.
 #
@@ -35,16 +36,22 @@ PlayerOne = str('PlayerOne')
 
 MenuCH = int(0)
 
-MenuOpcao = int(0)
+MenuOpcao = str('')
+
+
 
 # Variáveis íniciais. ###
 # Menu ínicial
-while MenuCH != 1:
+while True:
     # Limpa a tela
     system('export TERM=xterm ; clear') or None
-    MenuOpcao = int(input('1 - Iniciar\n2 - Carregar(Não implementado)\n3 - Opções(Não implementado)\n>>> '))
-    if MenuOpcao == 1:
+    MenuOpcao = str(input('1 - Iniciar Jogo\n2 - Carregar Jogo(Não implementado)\n3 - Opções(Não implementado)'
+                          '\n4 - Sair\n>>> '))
+    if MenuOpcao == '1':
         MenuCH = int(1)
+    elif MenuOpcao == '4':
+        system('export TERM=xterm ; clear') or None
+        break
     else:
         # Limpa a tela
         system('export TERM=xterm ; clear') or None
